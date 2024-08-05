@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  app:
+    build: .
+    entrypoint: ./docker/entrypoint.sh
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/home/node/app
+    depends_on:
+      - db
+    networks:
+      - finnetwork
+
+  db:
+    build: ./docker/mysql
+    restart: always
+    container_name: dbfin
+    tty: true
+    networks:
+      - finnetwork
+    volumes:
+      - ./docker/dbdata:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=fin
+      - MYSQL_ROOT_PASSWORD=root
+
+networks:
+  finnetwork:
+    driver: bridge
