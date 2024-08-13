@@ -23,7 +23,7 @@ export class AccountsService {
 
   findOne(id: string) {
     return this.acountRepository.findByPk(id, {
-      rejectOnEmpty: true,
+      rejectOnEmpty: false,
     })
   }
 

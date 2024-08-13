@@ -1,0 +1,61 @@
+@token=eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJmMGZCVUhRQ1V5aGt3SlFJVGVqNC1CbzRkSlcxQU8tazJVVjFVNUhIdlBZIn0.eyJleHAiOjE3MjM1ODczNzMsImlhdCI6MTcyMzU4NzA3MywianRpIjoiMDI2NTM1ZWQtM2RmMi00NWMzLWE3YjAtNzQ0YmQ0N2UwNzZmIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDc1L3JlYWxtcy9GaW5DeWNsZSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJkMTJmNzZkNC03MDdhLTRjYjMtYWJlOC1hZTdlNDYyMjI3MTkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuZXN0Iiwic2lkIjoiOGMzYWQwNjMtZDY1OS00ZGU1LWFlNzQtYjQxMWZlZmE3MzJmIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtZmluY3ljbGUiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXRoZXVzIEhlbnJpcXVlIFNvYXJlcyBNb3Jlbm8iLCJzdWJkb21haW4iOiJ0ZW5hbnQxIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidXNlcjFAdXNlci5jb20iLCJnaXZlbl9uYW1lIjoiTWF0aGV1cyBIZW5yaXF1ZSIsImZhbWlseV9uYW1lIjoiU29hcmVzIE1vcmVubyIsImVtYWlsIjoidXNlcjFAdXNlci5jb20ifQ.ZVc6epdP8jiraWVgqpX8vPFoMrn6vpdrwp1sWfO1JFGt0Ki25OKe4X5gwrj24wV6pTcXfcqCLxqAVClyQ4VLBDrcpUMtkpo9SIKH9JBN7gpANIegmCGLM3yv_PDlscZ4MRZL0Bp4EmRFQNt34fnbo4XVSD97FjhFDMU0C3q4zxmpqqCWmM531SFVOea-zxkeKJMfHEa7vLxR2_dHqCJXnvX63nI5HTfJ0sa82D6ekIWqCS20Kn8SisbBmAH2STzJQasTRAIhpSUgSdxF0fK7YHMU3FAMX0PNTX7UfEUV2kajfcuPU7Q9w740yMy8vCda4U_3Jv-INekA-XlRcwhLIg
+
+###
+GET http://localhost:3000/transactions
+Authorization: Bearer {{token}}
+
+###
+POST http://localhost:3000/transactions
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "payment_date": "2021-01-01",
+  "name": "Nova conta 1",
+  "description": "Descrição",
+  "category": "category1",
+  "amount": 30,
+  "type": "debit"
+}
+
+###
+POST http://localhost:3000/transactions
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "payment_date": "2021-01-01",
+  "name": "Nova conta 1"
+}
+
+
+###
+GET http://localhost:3000/reports
+Authorization: Bearer {{token}}
+
+###
+POST http://localhost:3000/reports
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "start_date": "2021-01-01",
+  "end_date": "2021-01-02"
+}
+
+
+###
+GET http://localhost:3000/accounts
+
+###
+GET http://localhost:3000/accounts/12c95268-8dc7-40f5-9800-1dcd051bed44
+Content-Type: application/json
+
+###
+POST http://localhost:3000/accounts
+Content-Type: application/json
+
+{
+    "name": "Account 1",
+    "subdomain": "tenant1"
+}
